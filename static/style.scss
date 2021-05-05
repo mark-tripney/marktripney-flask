@@ -3,7 +3,7 @@
 // **************************************************
 
 body {
-  --heading-color: #282b36;
+  --text-color: #282b36;
   --background-color: #ffffff;
   --button-background: #282b36;
   --button-color: #fff;
@@ -11,7 +11,7 @@ body {
 }
 
 body.dark-theme {
-  --heading-color: #fff;
+  --text-color: #fff;
   --background-color: #282b36;
   --button-background: #fff;
   --button-color: #282b36;
@@ -39,7 +39,10 @@ $serif: 'Lora', serif;
 }
 
 li {
-  list-style: none;
+  list-style-position: inside;
+  font-family: $sans-serif;
+  color: var(--text-color);
+  font-size: 1.3em;
 }
 
 body {
@@ -50,6 +53,44 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-family: $sans-serif;
+  font-weight: $heavy-font-weight;
+  font-size: 2.5em;
+  line-height: 1.2;
+  margin-left: -2px;
+  color: var(--text-color);
+}
+
+small {
+  display: block;
+  font-family: $sans-serif;
+  font-size: 1em;
+  margin-bottom: 1.3em;
+  color: gray;
+}
+
+strong {
+  color: var(--text-color);
+}
+
+pre {
+  background: #afeeee;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 10px;
+  line-height: 1.6;
+  font-size: 1.3em;
+}
+
+p > code {
+  font-size: 1.1em;
+  padding: 2px 3px;
+  margin: 0 3px;
+  background-color: #afeeee;
+  border-radius: 5px;
+}
+
 
 // **************************************************
 // MAIN NAV
@@ -57,7 +98,7 @@ a {
 
 .main-nav-container {
   max-width: 100%;
-  margin: auto 0;
+  margin: 0 auto 1em;
   background-color: var(--nav-background);
 
   .main-nav-ul {
@@ -67,7 +108,7 @@ a {
     align-items: center;
 
     li {
-      font-family: $sans-serif;
+      list-style: none;
       font-size: 1em;
       font-weight: $bold-font-weight;
 
@@ -103,7 +144,7 @@ a {
 // **************************************************
 
 main {
-  max-width: 90%;
+  max-width: 60%;
   margin: 0 auto;
 }
 
@@ -115,21 +156,13 @@ main {
 .intro {
   margin-top: 20px;
   margin-bottom: 20px;
-
-  h1 {
-    font-family: $sans-serif;
-    font-weight: $heavy-font-weight;
-    font-size: 2em;
-    line-height: 1.2;
-    color: var(--heading-color);
-  }
 }
 
 p {
   font-family: $sans-serif;
   font-weight: $med-font-weight;
   font-size: 1.3em;
-  color: var(--button-background);
+  color: var(--text-color);
   // TODO: Remove this margin when more content is added.
   margin-bottom: 0.6em;
 }
