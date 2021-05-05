@@ -1,5 +1,6 @@
 title: First Post
 date: 2021-05-05
+summary: A dummy post, strictly for testing purposes.
 tags: Misc
 
 

@@ -1,1 +1,9 @@
 {% extends "base.html" %}
+{% block content %}
+  <h1>Recent posts</h1>
+  {% for page in pages %}
+    <h2>{{ page.title }}</h2>
+    <p>{{ page.summary }}</p>
+    <a href="/writing/{{ page.path }}.html">Read</a>
+  {% endfor %}
+{% endblock content %}
