@@ -3,12 +3,11 @@ from flask import Flask, render_template, render_template_string, url_for
 from flask_flatpages import FlatPages
 
 
-def my_markdown(text):
-    markdown_text = render_template_string(text)
-    formatted_text = markdown(
-        markdown_text, extensions=["fenced_code"]
-    )
-    return formatted_text
+# Customise render, incorporating fenced code block formatting. For details:
+# https://flask-flatpages.readthedocs.io/en/v0.7.2/index.html#using-custom-html-renderers
+def renderer(text):
+    pre_rendered_body = render_template_string(text)
+    return markdown(pre_rendered_body, extensions=["fenced_code"])
 
 
 FLATPAGES_AUTO_RELOAD = True
@@ -16,7 +15,7 @@ FLATPAGES_EXTENSION = ".md"
 
 app = Flask(__name__)
 app.config.from_object(__name__)
-app.config["FLATPAGES_HTML_RENDERER"] = my_markdown
+app.config["FLATPAGES_HTML_RENDERER"] = renderer
 pages = FlatPages(app)
 
 
@@ -28,7 +27,6 @@ def index():
 
 @app.route("/writing/<path:path>.html")
 def page(path):
-    print("Page function running")
     page = pages.get_or_404(path)
     return render_template("page.html", page=page)
 
@@ -40,7 +38,7 @@ def work():
 
 @app.route("/writing")
 def writing():
-    return render_template("writing.html", title="Writing")
+    return render_template("writing.html", title="Writing", pages=pages)
 
 
 @app.route("/contact")
