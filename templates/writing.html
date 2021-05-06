@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Recent posts</h1>
+  <h1 class="section-head">Recent posts</h1>
   {% for page in pages %}
     <div class="post">
-      <h2>{{ page.title }}</h2>
-      <small>{{ page.date.strftime('%A, %d %B, %Y') }}</small>
+      <h2><a class="read-link" href="/writing/{{ page.path }}.html">{{ page.title }}</a></h2>
+      <small class="post-listing">Posted on {{ page.date.strftime('%A, %d %B, %Y') }}.</small>
       <p>{{ page.summary }}</p>
-      <a href="/writing/{{ page.path }}.html">Read</a>
     </div>
   {% endfor %}
 {% endblock content %}
