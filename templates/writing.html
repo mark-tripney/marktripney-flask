@@ -2,8 +2,11 @@
 {% block content %}
   <h1>Recent posts</h1>
   {% for page in pages %}
-    <h2>{{ page.title }}</h2>
-    <p>{{ page.summary }}</p>
-    <a href="/writing/{{ page.path }}.html">Read</a>
+    <div class="post">
+      <h2>{{ page.title }}</h2>
+      <small>{{ page.date.strftime('%A, %d %B, %Y') }}</small>
+      <p>{{ page.summary }}</p>
+      <a href="/writing/{{ page.path }}.html">Read</a>
+    </div>
   {% endfor %}
 {% endblock content %}
