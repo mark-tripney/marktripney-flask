@@ -4,3 +4,4 @@
 /static/style.css.map
 .DS_Store
 .flaskenv
+__pycache__
