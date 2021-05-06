@@ -38,7 +38,8 @@ def work():
 
 @app.route("/writing")
 def writing():
-    return render_template("writing.html", title="Writing", pages=pages)
+    date_sort = sorted(pages, reverse=True, key=lambda p: p.meta["date"])
+    return render_template("writing.html", title="Writing", pages=date_sort)
 
 
 @app.route("/contact")
