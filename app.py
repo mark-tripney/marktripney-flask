@@ -1,3 +1,4 @@
+from datetime import datetime
 from markdown import markdown
 from flask import Flask, render_template, render_template_string, url_for
 from flask_flatpages import FlatPages
@@ -19,6 +20,11 @@ app.config["FLATPAGES_HTML_RENDERER"] = renderer
 pages = FlatPages(app)
 
 
+@app.context_processor
+def inject_year():
+    return dict(year=datetime.today().year)
+
+
 @app.route("/")
 @app.route("/home")
 def index():
@@ -38,7 +44,8 @@ def work():
 
 @app.route("/writing")
 def writing():
-    date_sort = sorted(pages, reverse=True, key=lambda p: p.meta["date"])
+    # Sort posts by date, newest first, before passing to render_template()
+    date_sort = sorted(pages, reverse=True, key=lambda _: _.meta["date"])
     return render_template("writing.html", title="Writing", pages=date_sort)
 
 

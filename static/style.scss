@@ -37,8 +37,14 @@ li {
   font-family: $head-font;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: $background-colour;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -117,7 +123,7 @@ p > code {
 // **************************************************
 
 .main-nav-container {
-  max-width: 100%;
+  width: 100%;
   margin: 0 auto 1em;
   padding: 0 5%;
   background-color: $nav-background;
@@ -164,8 +170,45 @@ p > code {
 // **************************************************
 
 main {
-  max-width: 90%;
+  width: 90%;
   margin: 0 auto;
+  flex: 1 0 auto;
+}
+
+
+// **************************************************
+// FOOTER
+// **************************************************
+
+// Force footer to bottom of page
+.main-footer {
+  flex-shrink: 0;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 5%;
+  background-color: $nav-background;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 0.8em;
+
+  .push-left {
+    margin-right: auto;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.twitter-logo {
+  margin-right: 10px;
+  height: 20px;
+}
+
+.github-logo {
+  height: 30px;
 }
 
 
@@ -219,7 +262,7 @@ main {
     }
 
     main {
-      max-width: 90%;
+      width: 90%;
     }
   }
 
@@ -256,7 +299,22 @@ main {
     }
 
     main {
-      max-width: 60%;
+      width: 60%;
+    }
+
+    // **************************************************
+    // FOOTER: 1440px
+    // **************************************************
+    .main-footer {
+      padding: 0 20%;
+      height: 60px;
+    }
+    .twitter-logo {
+      margin-right: 15px;
+      height: 30px;
+    }
+    .github-logo {
+      height: 40px;
     }
   }
 }

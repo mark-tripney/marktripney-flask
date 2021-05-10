@@ -31,6 +31,15 @@
       {% block content %}
       {% endblock content %}
     </main>
-    <script src="{{ url_for("static", filename="script.js") }}"></script>
+    <footer class="main-footer">
+      <p class="push-left">&copy; {{ year }} Mark Tripney</p>
+      <a href="https://twitter.com/marktripney" target="_blank">
+        <img class="twitter-logo" src="{{ url_for("static", filename="2021 Twitter logo - blue.png") }}"
+             alt="Twitter logo">
+      </a>
+      <a href="https://github.com/mtripney" target="_blank">
+        <img class="github-logo" src="{{ url_for("static", filename="Octocat.png") }}" alt="GitHub logo">
+      </a>
+    </footer>
   </body>
 </html>
