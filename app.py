@@ -1,3 +1,4 @@
+from sys import argv
 from datetime import datetime
 from markdown import markdown
 from flask import Flask, render_template, render_template_string, url_for
@@ -56,4 +57,7 @@ def contact():
 
 
 if __name__ == "__main__":
-    freezer.run(debug=True)
+    if len(argv) > 1 and argv[1] == "build":
+        freezer.freeze()
+    else:
+        app.run(port=8000)
