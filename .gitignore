@@ -1,6 +1,5 @@
 /.idea
 /venv
-/static/style.css
 /static/style.css.map
 .DS_Store
 .flaskenv
