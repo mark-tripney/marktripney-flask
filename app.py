@@ -32,7 +32,7 @@ def index():
     return render_template("index.html", title="Home")
 
 
-@app.route("/<path:path>/")
+@app.route("/writing/<path:path>/")
 def page(path):
     page = pages.get_or_404(path)
     return render_template("page.html", title="Writing", page=page)
