@@ -44,7 +44,7 @@ def work():
 
 @app.route("/writing")
 def writing():
-    # Sort posts by date, newest first, before passing to render_template()
+    # Sort pages (posts) by date, newest first, before passing to render_template()
     date_sort = sorted(pages, reverse=True, key=lambda _: _.meta["date"])
     return render_template("writing.html", title="Writing", pages=date_sort)
 
