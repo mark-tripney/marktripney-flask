@@ -2,6 +2,7 @@ from datetime import datetime
 from markdown import markdown
 from flask import Flask, render_template, render_template_string, url_for
 from flask_flatpages import FlatPages
+from flask_frozen import Freezer
 
 
 # Customise render, incorporating fenced code block formatting. For details:
@@ -18,6 +19,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 app.config["FLATPAGES_HTML_RENDERER"] = renderer
 pages = FlatPages(app)
+freezer = Freezer(app)
 
 
 @app.context_processor
@@ -26,33 +28,32 @@ def inject_year():
 
 
 @app.route("/")
-@app.route("/home")
 def index():
     return render_template("index.html", title="Home")
 
 
-@app.route("/writing/<path:path>.html")
+@app.route("/<path:path>/")
 def page(path):
     page = pages.get_or_404(path)
     return render_template("page.html", title="Writing", page=page)
 
 
-@app.route("/work")
+@app.route("/work/")
 def work():
     return render_template("work.html", title="Work")
 
 
-@app.route("/writing")
+@app.route("/writing/")
 def writing():
     # Sort pages (posts) by date, newest first, before passing to render_template()
     date_sort = sorted(pages, reverse=True, key=lambda _: _.meta["date"])
     return render_template("writing.html", title="Writing", pages=date_sort)
 
 
-@app.route("/contact")
+@app.route("/contact/")
 def contact():
     return render_template("contact.html", title="Contact")
 
 
 if __name__ == "__main__":
-    app.run()
+    freezer.run(debug=True)
