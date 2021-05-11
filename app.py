@@ -1,9 +1,7 @@
-from sys import argv
 from datetime import datetime
 from markdown import markdown
 from flask import Flask, render_template, render_template_string, url_for
 from flask_flatpages import FlatPages
-from flask_frozen import Freezer
 
 
 # Customise render, incorporating fenced code block formatting. For details:
@@ -20,7 +18,6 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 app.config["FLATPAGES_HTML_RENDERER"] = renderer
 pages = FlatPages(app)
-freezer = Freezer(app)
 
 
 @app.context_processor
@@ -57,7 +54,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    if len(argv) > 1 and argv[1] == "build":
-        freezer.freeze()
-    else:
-        app.run(port=8000)
+    app.run()

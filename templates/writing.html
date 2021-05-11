@@ -3,7 +3,7 @@
   <h1 class="section-head">Recent posts</h1>
   {% for page in pages %}
     <div class="post">
-      <h2><a class="read-link" href="..{{ url_for("page", path=page.path) }}index.html">{{ page.title }}</a></h2>
+      <h2><a class="read-link" href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h2>
       <small class="post-listing">Posted on {{ page.date.strftime('%A, %d %B, %Y') }}.</small>
       <p>{{ page.summary }}</p>
     </div>
