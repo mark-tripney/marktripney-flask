@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-  <section class="intro">
-    <h1 class="section-head">Hello! My name is Mark. I design and build things for the web.</h1>
-  </section>
-  <section class="about">
-    <p>
-      I'm a Python developer who loves making fast, responsive, and accessible websites and applications.
-    </p>
-    <p>You can find some examples of my work and writing on this site; I'm regularly adding to both, so please check back soon!</p>
-  </section>
+  <h1 class="section-head">Hello! My name is Mark. I design and build things for the web.</h1>
+  <p>
+    An alumnus of Edinburgh College of Art, I've always had a keen interest in design and the crafting of things. That interest is now focused on
+    programming and web apps, and the ways in which both can be applied to positive, creative, and useful endeavours.</p>
+  <p>My first love is Python, but I also enjoy writing in JavaScript (and React), and constantly strive to make my CSS work more by design than chance.</p>
+  <h2>Latest project</h2>
+  <small>12 May, 2021</small>
+  <p>As one of several exercises in learning React, I developed a... todo list. Not the most original endeavour, but it demonstrates something of what React does well and, at a pinch, might even be useful. It's got local storage, after all, so you <span class="italicise">could</span> actually put it to work.</p>
+  <img class="screenshot" src="{{ url_for("static", filename="img/todo-react.png") }}" alt="Screenshot from a React-based todo app, showing a list of complete and incomplete items.">
+  <p>You can find the app here, and I'll soon be posting my thoughts on working with React, and a brief walk-through of the build, in the Writing section.</p>
 {% endblock content %}

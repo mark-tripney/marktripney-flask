@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/style.css") }}">
     <link rel="shortcut icon" href="{{ url_for("static", filename="favicon.ico") }}">
     <title>marktripney | {{ title }}</title>
   </head>
@@ -19,7 +19,7 @@
         <ul class="main-nav-ul">
           <li class="push-left">
             <a class="img-anchor" href="{{ url_for("index") }}"><img
-                src="{{ url_for("static", filename="mark-memoji.png") }}"></a>
+                src="{{ url_for("static", filename="img/mark-memoji.png") }}"></a>
           </li>
           <li><a href="{{ url_for("work") }}">Work</a></li>
           <li><a href={{ url_for("writing") }}>Writing</a></li>
@@ -34,11 +34,11 @@
     <footer class="main-footer">
       <p class="push-left">&copy; {{ year }} Mark Tripney</p>
       <a href="https://twitter.com/marktripney" target="_blank">
-        <img class="twitter-logo" src="{{ url_for("static", filename="2021 Twitter logo - blue.png") }}"
+        <img class="twitter-logo" src="{{ url_for("static", filename="img/2021 Twitter logo - blue.png") }}"
              alt="Twitter logo">
       </a>
       <a href="https://github.com/mtripney" target="_blank">
-        <img class="github-logo" src="{{ url_for("static", filename="Octocat.png") }}" alt="GitHub logo">
+        <img class="github-logo" src="{{ url_for("static", filename="img/Octocat.png") }}" alt="GitHub logo">
       </a>
     </footer>
   </body>
