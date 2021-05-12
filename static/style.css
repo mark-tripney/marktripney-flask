@@ -219,6 +219,10 @@ main ul li::marker {
     width: 60%;
   }
 
+  pre {
+    font-size: 1.3em;
+  }
+
   .main-footer {
     padding: 0 20%;
     height: 60px;
