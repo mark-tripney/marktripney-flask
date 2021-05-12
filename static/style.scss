@@ -77,7 +77,8 @@ p {
   font-family: $body-font;
   font-weight: $med-font-weight;
   color: $text-colour;
-  font-size: 1.1em;
+  font-size: 1em;
+  margin-bottom: 0.5em;
 }
 
 small {
@@ -105,13 +106,12 @@ pre {
   margin: 1em 0;
   border-radius: 10px;
   line-height: 1.6;
-  font-size: 1.3em;
+  font-size: 1.1em;
 }
 
 // Inline code
 p > code {
-  padding: 2px 3px;
-  margin: 0 3px;
+  padding: 2px 4px;
   background-color: #EEF2F2;
   border-radius: 5px;
   line-height: 1.4;
@@ -137,7 +137,7 @@ p > code {
       list-style: none;
       font-family: $body-font;
       font-weight: $bold-font-weight;
-      font-size: 0.9em;
+      font-size: 1em;
     }
 
     // 'Home' list img on left
@@ -173,6 +173,14 @@ main {
   width: 90%;
   margin: 0 auto;
   flex: 1 0 auto;
+
+  ul li {
+    font-family: $body-font;
+    font-size: 1em;
+    &::marker {
+      color: $dark-gray;
+    }
+  }
 }
 
 
@@ -192,6 +200,11 @@ main {
   align-items: center;
   font-size: 0.8em;
 
+  p {
+    margin: 0;
+  }
+
+
   .push-left {
     margin-right: auto;
   }
@@ -203,8 +216,8 @@ main {
 }
 
 .twitter-logo {
-  margin-right: 10px;
-  height: 20px;
+  margin-right: 20px;
+  height: 23px;
 }
 
 .github-logo {

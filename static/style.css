@@ -51,7 +51,8 @@ p {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   color: #000;
-  font-size: 1.1em;
+  font-size: 1em;
+  margin-bottom: 0.5em;
 }
 
 small {
@@ -73,12 +74,11 @@ pre {
   margin: 1em 0;
   border-radius: 10px;
   line-height: 1.6;
-  font-size: 1.3em;
+  font-size: 1.1em;
 }
 
 p > code {
-  padding: 2px 3px;
-  margin: 0 3px;
+  padding: 2px 4px;
   background-color: #EEF2F2;
   border-radius: 5px;
   line-height: 1.4;
@@ -99,7 +99,7 @@ p > code {
   list-style: none;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 .main-nav-container .main-nav-ul .push-left {
   margin-right: auto;
@@ -123,6 +123,13 @@ main {
   margin: 0 auto;
   flex: 1 0 auto;
 }
+main ul li {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+}
+main ul li::marker {
+  color: #939597;
+}
 
 .main-footer {
   flex-shrink: 0;
@@ -135,6 +142,9 @@ main {
   align-items: center;
   font-size: 0.8em;
 }
+.main-footer p {
+  margin: 0;
+}
 .main-footer .push-left {
   margin-right: auto;
 }
@@ -144,8 +154,8 @@ main {
 }
 
 .twitter-logo {
-  margin-right: 10px;
-  height: 20px;
+  margin-right: 20px;
+  height: 23px;
 }
 
 .github-logo {
