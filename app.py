@@ -2,7 +2,7 @@ from datetime import datetime
 from markdown import markdown
 from flask import Flask, render_template, render_template_string, url_for
 from flask_flatpages import FlatPages
-from flask_talisman import Talisman
+from flask_talisman import Talisman, GOOGLE_CSP_POLICY
 
 
 # Customise render, incorporating fenced code block formatting. For details:
@@ -14,12 +14,11 @@ def renderer(text):
 
 FLATPAGES_AUTO_RELOAD = True
 FLATPAGES_EXTENSION = ".md"
-
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config["FLATPAGES_HTML_RENDERER"] = renderer
 pages = FlatPages(app)
-Talisman(app)
+Talisman(app, content_security_policy=GOOGLE_CSP_POLICY)
 
 
 @app.context_processor
