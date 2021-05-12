@@ -3,7 +3,7 @@ black==21.4b1
 click==7.1.2
 Flask==1.1.2
 Flask-FlatPages==0.7.3
-Frozen-Flask==0.15
+flask-talisman==0.7.0
 greenlet==1.0.0
 gunicorn==20.1.0
 itsdangerous==1.1.0
