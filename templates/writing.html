@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
   <h1 class="section-head">Recent posts</h1>
+  <p class="italic">Coming soon!</p>
   {% for page in pages %}
     <div class="post">
       <h2><a class="read-link" href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h2>
