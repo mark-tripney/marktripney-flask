@@ -55,10 +55,6 @@ p {
   line-height: 1.4;
 }
 
-small + p {
-  margin-top: 0.2em;
-}
-
 p + p {
   margin-top: 0.5em;
 }
@@ -70,9 +66,13 @@ p ~ h2 {
 small {
   display: block;
   font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  color: #000000;
+  font-weight: 700;
+  color: #939597;
   font-size: 0.8em;
+}
+
+small + p {
+  margin-top: 0.2em;
 }
 
 p ~ ul {
@@ -165,7 +165,7 @@ main ul li {
   font-size: 1em;
 }
 main ul li::marker {
-  color: #000000;
+  color: #939597;
 }
 
 .main-footer {
@@ -229,7 +229,7 @@ main ul li::marker {
     width: 90%;
   }
 }
-@media screen and (min-width: 375px) and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   main {
     width: 80%;
     display: block;
@@ -254,7 +254,7 @@ main ul li::marker {
     margin-top: 0.5em;
   }
 }
-@media screen and (min-width: 375px) and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   h1 {
     font-size: 3em;
   }
@@ -271,36 +271,36 @@ main ul li::marker {
     display: block;
   }
 
-  .main-nav-container {
-    padding: 0 20%;
-  }
   .main-nav-container .main-nav-ul {
     height: 60px;
   }
   .main-nav-container .main-nav-ul li {
     font-size: 1.1em;
   }
-
-  main {
-    width: 60%;
-  }
-
-  pre {
+  .main-nav-container pre {
     font-size: 1.3em;
   }
-
-  .main-footer {
+  .main-nav-container .main-footer {
     padding: 0 20%;
     height: 60px;
   }
-
-  .twitter-logo {
+  .main-nav-container .twitter-logo {
     margin-right: 15px;
     height: 30px;
   }
-
-  .github-logo {
+  .main-nav-container .github-logo {
     height: 40px;
+  }
+}
+@media screen and (min-width: 1366px) {
+  main {
+    width: 60%;
+    display: block;
+  }
+
+  .main-nav-container,
+.main-footer {
+    padding: 0 20%;
   }
 }
 
