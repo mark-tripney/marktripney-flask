@@ -28,7 +28,9 @@ def inject_year():
 
 @app.route("/")
 def index():
-    return render_template("index.html", title="Home")
+    # Sort pages (posts) by date, newest first, before passing to render_template()
+    date_sort = sorted(pages, reverse=True, key=lambda _: _.meta["date"])
+    return render_template("index.html", title="Home", pages=date_sort)
 
 
 @app.route("/writing/<path:path>/")
@@ -40,13 +42,6 @@ def page(path):
 @app.route("/work/")
 def work():
     return render_template("work.html", title="Work")
-
-
-@app.route("/writing/")
-def writing():
-    # Sort pages (posts) by date, newest first, before passing to render_template()
-    date_sort = sorted(pages, reverse=True, key=lambda _: _.meta["date"])
-    return render_template("writing.html", title="Writing", pages=date_sort)
 
 
 @app.route("/contact/")
