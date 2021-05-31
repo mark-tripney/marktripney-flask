@@ -269,7 +269,7 @@ FOOTER
 }
 
 .footer-main p {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
 }
 
 .footer-main .push-left {
@@ -294,6 +294,15 @@ FOOTER
 /**********************************************************************
 MEDIA QUERIES
 **********************************************************************/
+
+@supports (background: -webkit-named-image(i)) {
+    .wrapper {
+        min-height: -webkit-fill-available;
+    }
+    html {
+        min-height: -webkit-fill-available;
+    }
+}
 
 @media screen and (min-width: 375px) {
     .h1-display {
