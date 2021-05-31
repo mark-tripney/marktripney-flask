@@ -5,41 +5,39 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preconnect" href="https://fonts.gstatic.com"/>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for("static", filename="css/style.css") }}">
     <link rel="shortcut icon" href="{{ url_for("static", filename="favicon.ico") }}">
     <title>marktripney | {{ title }}</title>
   </head>
   <body>
-    <header>
-      <nav class="main-nav-container">
-        <ul class="main-nav-ul">
-          <li class="push-left">
-            <a class="img-anchor" href="{{ url_for("index") }}"><img
-                src="{{ url_for("static", filename="img/mark-memoji.png") }}"></a>
-          </li>
-          <li><a href="{{ url_for("work") }}">Work</a></li>
-          <li><a href={{ url_for("writing") }}>Writing</a></li>
-          <li><a href="{{ url_for("contact") }}">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      {% block content %}
-      {% endblock content %}
-    </main>
-    <footer class="main-footer">
-      <p class="push-left">&copy; {{ year }} Mark Tripney</p>
-      <a href="https://twitter.com/marktripney" target="_blank">
-        <img class="twitter-logo" src="{{ url_for("static", filename="img/2021 Twitter logo - blue.png") }}"
-             alt="Twitter logo">
-      </a>
-      <a href="https://github.com/mtripney" target="_blank">
-        <img class="github-logo" src="{{ url_for("static", filename="img/Octocat.png") }}" alt="GitHub logo">
-      </a>
-    </footer>
+    <div class="wrapper">
+      <header>
+        <nav class="nav-main">
+          <ul>
+            <li class="nav-memoji">
+              <a class="nav-img" href="{{ url_for("index") }}"><img
+                  src="{{ url_for("static", filename="img/mark-memoji.png") }}" alt="Memoji of Mark Tripney"></a>
+            </li>
+            <li class="nav-name"><a href="{{ url_for("index") }}">Mark Tripney</a></li>
+            <li><a href="{{ url_for("work") }}">Work</a></li>
+            <li><a href="{{ url_for("contact") }}">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        {% block content %}
+        {% endblock content %}
+      </main>
+      <footer class="footer-main">
+        <p class="push-left">&copy; Mark Tripney, {{ year }}.</p>
+        <a href="https://twitter.com/marktripney" target="_blank">
+          <img class="twitter-logo" src="{{ url_for("static", filename="img/2021 Twitter logo - blue.png") }}"
+               alt="Twitter logo">
+        </a>
+        <a href="https://github.com/mtripney" target="_blank">
+          <img class="github-logo" src="{{ url_for("static", filename="img/Octocat.png") }}" alt="GitHub logo">
+        </a>
+      </footer>
+    </div>
   </body>
 </html>
