@@ -1,21 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1 class="section-head">Hello! My name is Mark. I design and build things for the web.</h1>
-  <p>
-    An alumnus of Edinburgh College of Art, I've always had a keen interest in design and the crafting of things. That
-    interest is now focused on
-    programming and the web, and the ways in which both can be applied to positive, creative, and useful endeavours.</p>
-  <p>My first love is Python, but I also enjoy writing in JavaScript (and React), and constantly strive to make my CSS
-    work more by design than chance.</p>
-  <h2>Latest project</h2>
-  <small>12 May, 2021</small>
-  <p>As one of several exercises in learning React, I developed a... todo list. Not the most original endeavour, but it
-    demonstrates something of what React does well and, at a pinch, might even be useful.</p>
-  <img class="screenshot" src="{{ url_for("static", filename="img/todo-react.png") }}"
-       alt="Screenshot from a React-based todo app, showing a list of complete and incomplete items.">
-  <p>It's certainly a 'minimum viable product' right now &mdash; there's no local storage, nor is there a toggle-all
-    option, for example &mdash; but it wouldn't take a great deal of work to refine it further. And, I intend to... but my
-    immediate intent was to simply get a handle on React basics; pass some state around; and so on.</p>
-  <p>You can find the app <a href="https://react-todos-marktripney.vercel.app" target="_blank">here</a>, and I'll soon
-    be posting my thoughts on working with React, and a brief walk-through of the build, in the Writing section.</p>
+  <h1 class="h1-display">Recent posts</h1>
+  {% for page in pages %}
+    <div class="post">
+      <h2><a class="post-link" href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h2>
+      <small class="post-date">Posted on {{ page.date.strftime('%d %B, %Y') }}.</small>
+      <p>{{ page.summary }}</p>
+    </div>
+  {% endfor %}
 {% endblock content %}
