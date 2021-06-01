@@ -16,7 +16,7 @@ GLOBAL MARGIN, PADDING, BORDER-BOX, HEIGHT
     box-sizing: border-box;
 }
 
-html, body {
+body {
     font-size: 16px;
     color: #000;
     font-family: var(--body-font);
@@ -299,6 +299,7 @@ MEDIA QUERIES
     .wrapper {
         min-height: -webkit-fill-available;
     }
+
     html {
         min-height: -webkit-fill-available;
     }
@@ -402,4 +403,9 @@ MEDIA QUERIES
     .footer-main p {
         font-size: 0.9rem;
     }
+}
+
+html {
+    visibility: visible;
+    opacity: 1;
 }
