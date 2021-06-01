@@ -404,8 +404,3 @@ MEDIA QUERIES
         font-size: 0.9rem;
     }
 }
-
-html {
-    visibility: visible;
-    opacity: 1;
-}
